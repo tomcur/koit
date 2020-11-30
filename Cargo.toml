@@ -8,7 +8,7 @@ readme = "README.md"
 repository = "https://github.com/tomcur/koit"
 description = "A simple, asynchronous, pure-Rust, structured, embedded database"
 categories = ["asynchronous", "database-implementations"]
-keywords = ["database", "embedded", "structured", "async", "non-blocking", "futures"]
+keywords = ["database", "embedded", "structured", "async", "non-blocking"]
 
 [package.metadata.docs.rs]
 # To run locally:
