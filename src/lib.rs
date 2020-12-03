@@ -4,6 +4,8 @@
 //!
 //! ```
 //! use std::default::Default;
+//!
+//! use koit::{FileDatabase, format::Json};
 //! use serde::{Deserialize, Serialize};
 //!
 //! #[derive(Default, Deserialize, Serialize)]
@@ -14,9 +16,7 @@
 //!
 //! #[tokio::main]
 //! async fn main() -> Result<(), Box<dyn std::error::Error>> {
-//!     let db = koit::FileDatabase::<Data, koit::format::Json>::load_from_path_or_default(
-//!         "./db.json"
-//!     ).await?;
+//!     let db = FileDatabase::<Data, Json>::load_from_path_or_default("./db.json").await?;
 //!   
 //!     db.write(|data| {
 //!         data.cats = 10;
