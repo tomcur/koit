@@ -11,7 +11,7 @@ Koit is a simple, asynchronous, pure-Rust, structured, embedded database.
 
 ```toml
 [dependencies]
-koit = "0.1"
+koit = "0.2"
 ```
 
 ## Example
@@ -56,7 +56,7 @@ formatter enabled. You can cherry-pick features instead.
 
 ```toml
 [dependencies.koit]
-version = "0.1"
+version = "0.2"
 default-features = false
 features = ["bincode-format"]
 ```
