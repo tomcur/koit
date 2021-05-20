@@ -19,7 +19,7 @@ koit = "0.2"
 ```rust
 use std::default::Default;
 
-use koit::{FileDatabase, format::Json};
+use koit::{FileDatabase, format::Toml};
 use serde::{Deserialize, Serialize};
 
 #[derive(Default, Deserialize, Serialize)]
@@ -30,7 +30,7 @@ struct Data {
 
 #[async_std::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let db = FileDatabase::<Data, Json>::load_from_path_or_default("./db.json").await?;
+    let db = FileDatabase::<Data, Toml>::load_from_path_or_default("./db.toml").await?;
   
     db.write(|data| {
         data.cats = 10;
@@ -51,14 +51,14 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 - works with arbitrary storage backends
 - comes with default formatters and backends that fit more purposes
 
-By default, Koit comes with its file-backend, JSON formatter and Bincode
+By default, Koit comes with its file-backend, JSON / Toml formatter and Bincode
 formatter enabled. You can cherry-pick features instead.
 
 ```toml
 [dependencies.koit]
 version = "0.2"
 default-features = false
-features = ["bincode-format"]
+features = ["toml-format"]
 ```
 
 ## Purpose
