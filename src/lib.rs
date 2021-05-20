@@ -316,6 +316,6 @@ where
     P: AsRef<std::path::Path>,
     D: std::default::Default,
   {
-    Self::load_from_path_or_else(path, || std::default::Default::default()).await
+    Self::load_from_path_or_else(path, std::default::Default::default).await
   }
 }

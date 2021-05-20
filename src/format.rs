@@ -42,10 +42,10 @@ mod json {
     type SerError = Self::DeError;
 
     fn to_bytes(value: &T) -> Result<Vec<u8>, Self::SerError> {
-      Ok(serde_json::to_vec_pretty(value)?)
+      serde_json::to_vec_pretty(value)
     }
     fn from_bytes(data: Vec<u8>) -> Result<T, Self::DeError> {
-      Ok(serde_json::from_slice(&data)?)
+      serde_json::from_slice(&data)
     }
   }
 }
@@ -69,10 +69,10 @@ mod bincode {
     type SerError = Self::DeError;
 
     fn to_bytes(value: &T) -> Result<Vec<u8>, Self::SerError> {
-      Ok(bincode::serialize(value)?)
+      bincode::serialize(value)
     }
     fn from_bytes(data: Vec<u8>) -> Result<T, Self::DeError> {
-      Ok(bincode::deserialize(&data)?)
+      bincode::deserialize(&data)
     }
   }
 }
@@ -96,10 +96,10 @@ mod toml {
     type DeError = toml::de::Error;
 
     fn to_bytes(value: &T) -> Result<Vec<u8>, Self::SerError> {
-      Ok(toml::to_vec(value)?)
+      toml::to_vec(value)
     }
     fn from_bytes(data: Vec<u8>) -> Result<T, Self::DeError> {
-      Ok(toml::from_slice(&data)?)
+      toml::from_slice(&data)
     }
   }
 }

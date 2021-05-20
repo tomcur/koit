@@ -75,7 +75,7 @@ impl Memory {
 
   /// Take the data out of the backend, leaving an empty backend in its place.
   pub fn take(&mut self) -> Vec<u8> {
-    std::mem::replace(&mut self.0, Vec::new())
+    std::mem::take(&mut self.0)
   }
 }
 
@@ -93,7 +93,8 @@ impl Backend for Memory {
     Ok(self.0.clone())
   }
   async fn write(&mut self, data: Vec<u8>) -> Result<(), Self::Error> {
-    Ok(self.0 = data)
+    self.0 = data;
+    Ok(())
   }
 }
 
