@@ -1,7 +1,7 @@
 use thiserror::Error;
 
 /// The error variants Koit can return.
-/// 
+///
 /// The concrete source error types are the associated errors types
 /// [`Format::Error`](crate::format::Format::Error) and [`Backend::Error`](crate::backend::Backend::Error).
 #[derive(Debug, Error)]
