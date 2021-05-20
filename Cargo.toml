@@ -18,22 +18,25 @@ rustdoc-args = ["--cfg", "docsrs"]
 
 [features]
 default = ["file-backend", "json-format", "bincode-format"]
-file-backend = ["tokio/fs", "tokio/io-util"]
+file-backend = []
 json-format = ["serde", "serde_json"]
 bincode-format = ["serde", "bincode"]
 
 
 [dependencies]
 tracing = "0.1"
-tokio = { version = "1.0", features = ["sync"] }
 async-trait = "0.1"
 thiserror = "1.0"
 
 serde = { version = "1.0", optional = true }
 serde_json = { version = "1.0", optional = true }
 bincode = { version = "1.0", optional = true }
+toml = {version = "0.5.8",optional = true}
 
 [dev-dependencies]
 futures = "0.3"
 serde = { version = "1.0", features = ["derive"] }
-tokio = { version = "1.0", features = ["macros", "rt-multi-thread"] }
+
+[dependencies.async-std]
+version = "1.9.0"
+features = ["unstable","attributes"]

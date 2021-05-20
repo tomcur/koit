@@ -28,7 +28,6 @@ pub use self::json::Json;
 #[cfg(feature = "bincode-format")]
 pub use self::bincode::Bincode;
 
-
 #[cfg(feature = "json-format")]
 mod json {
     use serde::{de::DeserializeOwned, Serialize};

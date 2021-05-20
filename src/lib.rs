@@ -14,7 +14,7 @@
 //!     yaks: u64,
 //! }
 //!
-//! #[tokio::main]
+//! #[async_std::main]
 //! async fn main() -> Result<(), Box<dyn std::error::Error>> {
 //!     let db = FileDatabase::<Data, Json>::load_from_path_or_default("./db.json").await?;
 //!   
@@ -41,9 +41,9 @@
 
 #![cfg_attr(docsrs, feature(doc_cfg))]
 
+use async_std::sync::{Mutex, RwLock};
 use std::future::Future;
 use std::marker::PhantomData;
-use tokio::sync::{Mutex, RwLock};
 
 mod error;
 pub use error::KoitError;

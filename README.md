@@ -28,7 +28,7 @@ struct Data {
     yaks: u64,
 }
 
-#[tokio::main]
+#[async_std::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let db = FileDatabase::<Data, Json>::load_from_path_or_default("./db.json").await?;
   
