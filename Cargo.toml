@@ -17,10 +17,11 @@ all-features = true
 rustdoc-args = ["--cfg", "docsrs"]
 
 [features]
-default = ["file-backend", "json-format", "bincode-format"]
+default = ["file-backend", "json-format", "bincode-format", "toml-format"]
 file-backend = []
 json-format = ["serde", "serde_json"]
 bincode-format = ["serde", "bincode"]
+toml-format = ["serde", "toml"]
 
 
 [dependencies]
