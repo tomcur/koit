@@ -49,7 +49,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 - built-in, future-aware, reader-writer synchronization
 - works with arbitrary data formatters
 - works with arbitrary storage backends
-- comes with default formatters and backends that fit more purposes
+- comes with default formatters and backends that fit most purposes
 
 By default, Koit comes with its file-backend, JSON formatter and Bincode
 formatter enabled. You can cherry-pick features instead.
